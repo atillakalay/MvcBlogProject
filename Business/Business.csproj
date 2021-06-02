@@ -41,11 +41,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAboutService.cs" />
+    <Compile Include="Abstract\IAdminService.cs" />
+    <Compile Include="Abstract\IAuthorService.cs" />
+    <Compile Include="Abstract\IBlogService.cs" />
+    <Compile Include="Abstract\ICategoryService.cs" />
+    <Compile Include="Abstract\ICommentsService.cs" />
+    <Compile Include="Abstract\IContactService.cs" />
+    <Compile Include="Concrete\AboutManager.cs" />
+    <Compile Include="Concrete\AdminManager.cs" />
+    <Compile Include="Concrete\AuthorManager.cs" />
+    <Compile Include="Concrete\BlogManager.cs" />
+    <Compile Include="Concrete\CategoryManager.cs" />
+    <Compile Include="Concrete\CommentManager.cs" />
+    <Compile Include="Concrete\ContactManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Abstract\" />
-    <Folder Include="Concrete\" />
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{ACD65F66-01C6-484A-A502-B46B5F7F84F4}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{78A1451D-B7C4-4460-A00B-DE555EA06DC8}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -29,6 +29,11 @@ namespace DataAccess.Concrete
             return efContext.SaveChanges();
         }
 
+        public List<T> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
         public T GetById(int id)
         {
             return _dbSet.Find(id);
