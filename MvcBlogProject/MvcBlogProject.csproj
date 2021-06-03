@@ -127,8 +127,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -221,11 +225,6 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Templates\miniblog\.DS_Store" />
     <Content Include="Templates\miniblog\css\.DS_Store" />
     <Content Include="Templates\miniblog\fonts\.DS_Store" />
@@ -332,6 +331,23 @@
     <Content Include="Templates\miniblog\scss\_site-navbar.scss" />
     <Content Include="Views\Shared\Layout.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\BlogList.cshtml" />
+    <Content Include="Views\Blog\FeaturedPosts.cshtml" />
+    <Content Include="Views\Blog\OtherFeaturedPosts.cshtml" />
+    <Content Include="Views\Blog\MailSubscribe.cshtml" />
+    <Content Include="Views\About\Footer.cshtml" />
+    <Content Include="Views\Blog\BlogDetails.cshtml" />
+    <Content Include="Views\Blog\BlogCover.cshtml" />
+    <Content Include="Views\Blog\BlogReadAll.cshtml" />
+    <Content Include="Views\Comment\CommentList.cshtml" />
+    <Content Include="Views\Comment\LeaveComment.cshtml" />
+    <Content Include="Views\Author\AuthorAbout.cshtml" />
+    <Content Include="Views\Author\AuthorPopularPost.cshtml" />
+    <Content Include="Views\Category\BlogDetailsCategoryList.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\About\MeetTheTeam.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Blog\BlogByCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
