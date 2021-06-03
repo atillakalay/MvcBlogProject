@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Business.Concrete;
 using System.Web.Mvc;
+using DataAccess.Concrete.EntityFramework;
 
 namespace MvcBlogProject.Controllers
 {
     public class BlogController : Controller
     {
         // GET: Blog
+        private BlogManager _blogManager = new BlogManager(new EfBlogDal());
         public ActionResult Index()
         {
             return View();
@@ -16,7 +15,8 @@ namespace MvcBlogProject.Controllers
 
         public PartialViewResult BlogList()
         {
-            return PartialView();
+            var result = _blogManager.GetAll();
+            return PartialView(result);
         }
 
         public PartialViewResult FeaturedPosts()

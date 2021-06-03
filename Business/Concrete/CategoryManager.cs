@@ -20,27 +20,27 @@ namespace Business.Concrete
 
         public List<Category> GetAll()
         {
-            return _categoryDal.GetAll();
+            return _categoryDal.List();
         }
 
-        public int Add(Category category)
+        public void Add(Category category)
         {
-            return _categoryDal.Add(category);
+            _categoryDal.Add(category);
         }
 
-        public int Update(Category category)
+        public void Update(Category category)
         {
-            return _categoryDal.Update(category);
+            _categoryDal.Update(category);
         }
 
-        public int Delete(Category category)
+        public void Delete(Category category)
         {
-            return _categoryDal.Delete(category);
+            _categoryDal.Delete(category);
         }
 
         public Category GetById(int id)
         {
-            return _categoryDal.GetById(id);
+            return _categoryDal.Get(x => x.CategoryId == id);
         }
     }
 }

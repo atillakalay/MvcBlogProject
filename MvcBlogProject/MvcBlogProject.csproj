@@ -367,6 +367,14 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{B44E3660-AA1E-4568-A8C8-2463B24E3661}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{34663580-5640-4D15-9102-9955B2DA604B}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{acd65f66-01c6-484a-a502-b46b5f7f84f4}</Project>
       <Name>DataAccess</Name>

@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Core.DataAccess;
-using Entities.Concrete;
 
-namespace DataAccess.Abstract
+namespace Core.Entity
 {
-   public interface IBlogDal : IEntityRepository<Blog>
+  public  interface IEntity
     {
     }
 }

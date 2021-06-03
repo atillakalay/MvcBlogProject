@@ -52,15 +52,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAboutDal.cs" />
-    <Compile Include="Abstract\IAdmin.cs" />
+    <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\IAuthorDal.cs" />
     <Compile Include="Abstract\IBlogDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\ICommentDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
-    <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Concrete\EntityFramework\EfBlogDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfContext.cs" />
-    <Compile Include="Concrete\Repository.cs" />
+    <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -70,6 +70,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{34663580-5640-4D15-9102-9955B2DA604B}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{78a1451d-b7c4-4460-a00b-de555ea06dc8}</Project>
       <Name>Entities</Name>
