@@ -58,13 +58,23 @@
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\ICommentDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
+    <Compile Include="Abstract\ISubscribeMailDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfBlogDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfContext.cs" />
+    <Compile Include="Concrete\EntityFramework\EfSubscribeMailDal.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
+    <Compile Include="Migrations\202106042047199_mig_subscribeMailAdded.cs" />
+    <Compile Include="Migrations\202106042047199_mig_subscribeMailAdded.designer.cs">
+      <DependentUpon>202106042047199_mig_subscribeMailAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202106042047199_mig_subscribeMailAdded.resx">
+      <DependentUpon>202106042047199_mig_subscribeMailAdded.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

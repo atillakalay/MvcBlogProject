@@ -1,12 +1,13 @@
-﻿@using Entities.Concrete
-@model List<Blog>
+﻿@using PagedList
+@using PagedList.Mvc
+@model IEnumerable<Entities.Concrete.Blog>
 @{ string color = "";}
 
 <div class="site-section">
     <div class="container">
         <div class="row mb-5">
             <div class="col-12">
-                <h2>Son Paylaşımlar</h2>
+                <h2>Paylaşımlar</h2>
             </div>
         </div>
         <div class="row">
@@ -49,7 +50,8 @@
             <p><a href="#">Devamını oku</a></p>
         </div>
     </div>
-</div>      }
+</div>}
         </div>
     </div>
 </div>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
