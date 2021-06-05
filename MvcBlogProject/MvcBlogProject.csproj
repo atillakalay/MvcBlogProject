@@ -195,6 +195,7 @@
     <Content Include="Templates\miniblog\fonts\icomoon\fonts\icomoon.svg" />
     <Content Include="Templates\miniblog\fonts\icomoon\Read Me.txt" />
     <Content Include="Templates\miniblog\fonts\icomoon\style.css" />
+    <Content Include="Templates\miniblog\images\bizkimiz.jpg" />
     <Content Include="Templates\miniblog\images\cebupacific-booking.jpg" />
     <Content Include="Templates\miniblog\images\hero_1.jpg" />
     <Content Include="Templates\miniblog\images\img_1.jpg" />

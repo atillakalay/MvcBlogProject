@@ -11,9 +11,11 @@ namespace MvcBlogProject.Controllers
     public class AboutController : Controller
     {
         private AboutManager _aboutManager = new AboutManager(new EfAboutDal());
+        private AuthorManager _authorManager = new AuthorManager(new EfAuthorDal());
         public ActionResult Index()
         {
-            return View();
+            var aboutContent = _aboutManager.GetAll();
+            return View(aboutContent);
         }
 
         public PartialViewResult Footer()
@@ -23,7 +25,8 @@ namespace MvcBlogProject.Controllers
         }
         public PartialViewResult MeetTheTeam()
         {
-            return PartialView();
+            var result = _authorManager.GetAll();
+            return PartialView(result);
         }
     }
 }

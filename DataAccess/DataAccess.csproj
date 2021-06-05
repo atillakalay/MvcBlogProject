@@ -60,6 +60,7 @@
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\ISubscribeMailDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfAboutDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfAuthorDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfBlogDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCommentDal.cs" />
@@ -74,6 +75,10 @@
     <Compile Include="Migrations\202106051309112_migCommentDateAdded.designer.cs">
       <DependentUpon>202106051309112_migCommentDateAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106051943100_mig_categoryDescriptionAdded.cs" />
+    <Compile Include="Migrations\202106051943100_mig_categoryDescriptionAdded.designer.cs">
+      <DependentUpon>202106051943100_mig_categoryDescriptionAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -83,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106051309112_migCommentDateAdded.resx">
       <DependentUpon>202106051309112_migCommentDateAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106051943100_mig_categoryDescriptionAdded.resx">
+      <DependentUpon>202106051943100_mig_categoryDescriptionAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -91,9 +91,14 @@ namespace MvcBlogProject.Controllers
             var result = _blogManager.BlogById(id);
             return PartialView(result);
         }
-        public ActionResult BlogByCategory()
+        public ActionResult BlogByCategory(int id)
         {
-            return View();
+            var blogListByCategory = _blogManager.GetBlogByCategory(id);
+            var categoryName = _blogManager.GetBlogByCategory(id).Select(x => x.Category.CategoryName).FirstOrDefault();
+            ViewBag.categoryName = categoryName;
+            var categoryDescription = _blogManager.GetBlogByCategory(id).Select(x => x.Category.CategoryDescription).FirstOrDefault();
+            ViewBag.categoryDescription = categoryDescription;
+            return View(blogListByCategory);
         }
     }
 }
