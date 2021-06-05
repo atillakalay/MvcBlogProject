@@ -61,6 +61,7 @@
     <Compile Include="Abstract\ISubscribeMailDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfAboutDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfBlogDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCommentDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfContext.cs" />
     <Compile Include="Concrete\EntityFramework\EfSubscribeMailDal.cs" />
@@ -69,12 +70,19 @@
     <Compile Include="Migrations\202106042047199_mig_subscribeMailAdded.designer.cs">
       <DependentUpon>202106042047199_mig_subscribeMailAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106051309112_migCommentDateAdded.cs" />
+    <Compile Include="Migrations\202106051309112_migCommentDateAdded.designer.cs">
+      <DependentUpon>202106051309112_migCommentDateAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202106042047199_mig_subscribeMailAdded.resx">
       <DependentUpon>202106042047199_mig_subscribeMailAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106051309112_migCommentDateAdded.resx">
+      <DependentUpon>202106051309112_migCommentDateAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

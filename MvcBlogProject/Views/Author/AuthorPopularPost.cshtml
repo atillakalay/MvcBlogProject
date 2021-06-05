@@ -1,40 +1,22 @@
-﻿<div class="sidebar-box">
-    <h3 class="heading">Popular Posts</h3>
+﻿@model IEnumerable<Entities.Concrete.Blog>
+<div class="sidebar-box">
+    <h3 class="heading">Yazarın Diğer Paylaşımları</h3>
     <div class="post-entry-sidebar">
         <ul>
-            <li>
-                <a href="">
-                    <img src="~/Templates/miniblog/images/img_1.jpg" alt="Image placeholder" class="mr-4">
-                    <div class="text">
-                        <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-                        <div class="post-meta">
-                            <span class="mr-2">March 15, 2018 </span>
+            @foreach (var item in Model)
+            {
+                <li>
+                    <a href="/Blog/BlogDetails/@item.BlogId">
+                        <img src="@item.BlogImage" alt="Image placeholder" class="mr-4">
+                        <div class="text">
+                            <h4>@item.BlogTitle</h4>
+                            <div class="post-meta">
+                                <span class="mr-2">@(((DateTime)item.BlogDate).ToString("dd-MMM-yyyy")) </span>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="~/Templates/miniblog/images/img_2.jpg" alt="Image placeholder" class="mr-4">
-                    <div class="text">
-                        <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-                        <div class="post-meta">
-                            <span class="mr-2">March 15, 2018 </span>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="~/Templates/miniblog/images/img_3.jpg" alt="Image placeholder" class="mr-4">
-                    <div class="text">
-                        <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-                        <div class="post-meta">
-                            <span class="mr-2">March 15, 2018 </span>
-                        </div>
-                    </div>
-                </a>
-            </li>
+                    </a>
+                </li>
+            }
         </ul>
     </div>
 </div>

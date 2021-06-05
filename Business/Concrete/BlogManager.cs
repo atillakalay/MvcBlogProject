@@ -25,7 +25,12 @@ namespace Business.Concrete
 
         public List<Blog> BlogById(int id)
         {
-            return _blogDal.List(x=>x.BlogId==id);
+            return _blogDal.List(x => x.BlogId == id);
+        }
+
+        public List<Blog> GetBlogByAuthor(int id)
+        {
+            return _blogDal.List(x => x.AuthorId == id);
         }
 
 

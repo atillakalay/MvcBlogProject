@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
+using Entities.Concrete;
 
 namespace MvcBlogProject.Controllers
 {
@@ -17,9 +18,16 @@ namespace MvcBlogProject.Controllers
             var result = _commentManager.CommentByBlog(id);
             return PartialView(result);
         }
-
-        public PartialViewResult LeaveComment()
+        [HttpGet]
+        public PartialViewResult LeaveComment(int id)
         {
+            ViewBag.id = id;
+            return PartialView();
+        }
+        [HttpPost]
+        public PartialViewResult LeaveComment(Comment comment)
+        {
+            _commentManager.Add(comment);
             return PartialView();
         }
     }

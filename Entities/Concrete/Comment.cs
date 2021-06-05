@@ -18,6 +18,8 @@ namespace Entities.Concrete
         public string Email { get; set; }
         [StringLength(300)]
         public string CommentText { get; set; }
+
+        public DateTime CommentDate { get; set; }
         public virtual Blog Blog { get; set; }
     }
 }

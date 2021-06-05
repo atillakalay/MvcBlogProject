@@ -8,6 +8,7 @@ namespace Business.Abstract
     {
         List<Blog> GetAll();
         List<Blog> BlogById(int id);
+        List<Blog> GetBlogByAuthor(int id);
         void Add(Blog blog);
         void Update(Blog blog);
         void Delete(Blog blog);
