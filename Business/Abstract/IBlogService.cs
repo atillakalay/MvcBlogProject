@@ -7,7 +7,7 @@ namespace Business.Abstract
     public interface IBlogService
     {
         List<Blog> GetAll();
-        Blog GetById(int id);
+        List<Blog> BlogById(int id);
         void Add(Blog blog);
         void Update(Blog blog);
         void Delete(Blog blog);

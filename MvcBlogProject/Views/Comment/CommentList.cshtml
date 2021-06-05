@@ -1,85 +1,21 @@
-﻿<div class="pt-5">
-    <h3 class="mb-5">6 Comments</h3>
+﻿@model IEnumerable<Entities.Concrete.Comment>
+
+<div class="pt-5">
+    <h3 class="mb-5">Yorumlar</h3>
     <ul class="comment-list">
-        <li class="comment">
-            <div class="vcard">
-                <img src="images/person_1.jpg" alt="Image placeholder">
-            </div>
-            <div class="comment-body">
-                <h3>Jean Doe</h3>
-                <div class="meta">January 9, 2018 at 2:21pm</div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                <p><a href="#" class="reply rounded">Reply</a></p>
-            </div>
-        </li>
-
-        <li class="comment">
-            <div class="vcard">
-                <img src="images/person_1.jpg" alt="Image placeholder">
-            </div>
-            <div class="comment-body">
-                <h3>Jean Doe</h3>
-                <div class="meta">January 9, 2018 at 2:21pm</div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                <p><a href="#" class="reply rounded">Reply</a></p>
-            </div>
-
-            <ul class="children">
-                <li class="comment">
-                    <div class="vcard">
-                        <img src="images/person_1.jpg" alt="Image placeholder">
-                    </div>
-                    <div class="comment-body">
-                        <h3>Jean Doe</h3>
-                        <div class="meta">January 9, 2018 at 2:21pm</div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                        <p><a href="#" class="reply rounded">Reply</a></p>
-                    </div>
-
-
-                    <ul class="children">
-                        <li class="comment">
-                            <div class="vcard">
-                                <img src="images/person_1.jpg" alt="Image placeholder">
-                            </div>
-                            <div class="comment-body">
-                                <h3>Jean Doe</h3>
-                                <div class="meta">January 9, 2018 at 2:21pm</div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                                <p><a href="#" class="reply rounded">Reply</a></p>
-                            </div>
-
-                            <ul class="children">
-                                <li class="comment">
-                                    <div class="vcard">
-                                        <img src="images/person_1.jpg" alt="Image placeholder">
-                                    </div>
-                                    <div class="comment-body">
-                                        <h3>Jean Doe</h3>
-                                        <div class="meta">January 9, 2018 at 2:21pm</div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                                        <p><a href="#" class="reply rounded">Reply</a></p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-
-        <li class="comment">
-            <div class="vcard">
-                <img src="images/person_1.jpg" alt="Image placeholder">
-            </div>
-            <div class="comment-body">
-                <h3>Jean Doe</h3>
-                <div class="meta">January 9, 2018 at 2:21pm</div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                <p><a href="#" class="reply rounded">Reply</a></p>
-            </div>
-        </li>
+        @foreach (var item in Model)
+        {
+<li class="comment">
+    <div class="vcard">
+        <img src="/Templates/miniblog/images/person_1.jpg" alt="Image placeholder">
+    </div>
+    <div class="comment-body">
+        <h3>@item.UserName</h3>
+        <div class="meta">January 9, 2018 at 2:21pm</div>
+        <p>@item.CommentText</p>
+        <p><a href="#" class="reply rounded">Reply</a></p>
+    </div>
+</li>}
     </ul>
-    <!-- END comment-list -->
-    @Html.Action("LeaveComment","Comment")
+    @Html.Action("LeaveComment", "Comment")
 </div>

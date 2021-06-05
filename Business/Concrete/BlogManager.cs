@@ -23,10 +23,11 @@ namespace Business.Concrete
             return _blogDal.List();
         }
 
-        public Blog GetById(int id)
+        public List<Blog> BlogById(int id)
         {
-            return _blogDal.Get(x => x.BlogId == id);
+            return _blogDal.List(x=>x.BlogId==id);
         }
+
 
         public void Add(Blog blog)
         {

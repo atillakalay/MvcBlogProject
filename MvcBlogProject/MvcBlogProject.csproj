@@ -139,6 +139,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\SubscribeMailController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -341,7 +342,6 @@
     <Content Include="Views\Blog\BlogList.cshtml" />
     <Content Include="Views\Blog\FeaturedPosts.cshtml" />
     <Content Include="Views\Blog\OtherFeaturedPosts.cshtml" />
-    <Content Include="Views\Blog\MailSubscribe.cshtml" />
     <Content Include="Views\About\Footer.cshtml" />
     <Content Include="Views\Blog\BlogDetails.cshtml" />
     <Content Include="Views\Blog\BlogCover.cshtml" />
@@ -355,6 +355,7 @@
     <Content Include="Views\About\MeetTheTeam.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Blog\BlogByCategory.cshtml" />
+    <Content Include="Views\SubscribeMail\AddMail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

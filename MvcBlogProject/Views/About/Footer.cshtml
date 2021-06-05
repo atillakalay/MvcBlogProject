@@ -1,11 +1,15 @@
-﻿
+﻿@model IEnumerable<Entities.Concrete.About>
 
 <div class="site-footer">
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-4">
-                <h3 class="footer-heading mb-4">Hakkımızda</h3>
-                <p>///Burası veri tabanından gelicek hakkımızda yazısı</p>
+                @foreach (var x in Model)
+                {
+                    <h3 class="footer-heading mb-4">Hakkımızda</h3>
+                    <p>@x.AboutContent1</p>
+
+                }
             </div>
             <div class="col-md-3 ml-auto">
                 <!-- <h3 class="footer-heading mb-4">Navigation</h3> -->

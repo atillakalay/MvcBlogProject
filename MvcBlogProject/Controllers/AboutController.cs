@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Business.Concrete;
+using DataAccess.Concrete.EntityFramework;
 
 namespace MvcBlogProject.Controllers
 {
     public class AboutController : Controller
     {
-        // GET: About
+        private AboutManager _aboutManager = new AboutManager(new EfAboutDal());
         public ActionResult Index()
         {
             return View();
@@ -16,7 +18,8 @@ namespace MvcBlogProject.Controllers
 
         public PartialViewResult Footer()
         {
-            return PartialView();
+            var result = _aboutManager.GetAll();
+            return PartialView(result);
         }
         public PartialViewResult MeetTheTeam()
         {

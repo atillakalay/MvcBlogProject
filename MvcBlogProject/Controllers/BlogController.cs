@@ -17,7 +17,7 @@ namespace MvcBlogProject.Controllers
 
         public PartialViewResult BlogList(int page = 1)
         {
-            var result = _blogManager.GetAll().ToPagedList(page,9);
+            var result = _blogManager.GetAll().ToPagedList(page, 9);
             return PartialView(result);
         }
 
@@ -76,23 +76,20 @@ namespace MvcBlogProject.Controllers
             return PartialView();
         }
 
-        public PartialViewResult MailSubscribe()
-        {
-            return PartialView();
-        }
-
-        public ActionResult BlogDetails()
+        public ActionResult BlogDetails(int id)
         {
             return View();
         }
 
-        public PartialViewResult BlogCover()
+        public PartialViewResult BlogCover(int id)
         {
-            return PartialView();
+            var result = _blogManager.BlogById(id);
+            return PartialView(result);
         }
-        public PartialViewResult BlogReadAll()
+        public PartialViewResult BlogReadAll(int id)
         {
-            return PartialView();
+            var result = _blogManager.BlogById(id);
+            return PartialView(result);
         }
         public ActionResult BlogByCategory()
         {

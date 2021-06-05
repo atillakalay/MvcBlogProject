@@ -39,7 +39,7 @@
         <div class="excerpt">
             <span class="@color">@x.Category.CategoryName</span>
 
-            <h2><a href="single.html">@x.BlogTitle</a></h2>
+            <h2><a href="/Blog/BlogDetails/@x.BlogId">@x.BlogTitle</a></h2>
             <div class="post-meta align-items-center text-left clearfix">
                 <figure class="author-figure mb-0 mr-3 float-left"><img src="@x.Author.AuthorImage" alt="Image" class="img-fluid"></figure>
                 <span class="d-inline-block mt-1"><a href="#">@x.Author.AuthorName</a></span>
@@ -47,7 +47,7 @@
             </div>
 
             <p>@x.BlogContent.Substring(0, x.BlogContent.Substring(0, 200).LastIndexOf(" ")) ...</p>
-            <p><a href="#">Devamını oku</a></p>
+            <p><a href="/Blog/BlogDetails/@x.BlogId">Devamını oku</a></p>
         </div>
     </div>
 </div>}

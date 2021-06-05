@@ -59,7 +59,9 @@
     <Compile Include="Abstract\ICommentDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\ISubscribeMailDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfAboutDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfBlogDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCommentDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfContext.cs" />
     <Compile Include="Concrete\EntityFramework\EfSubscribeMailDal.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
