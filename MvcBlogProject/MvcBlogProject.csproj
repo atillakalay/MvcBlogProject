@@ -197,6 +197,7 @@
     <Content Include="Templates\miniblog\fonts\icomoon\style.css" />
     <Content Include="Templates\miniblog\images\bizkimiz.jpg" />
     <Content Include="Templates\miniblog\images\cebupacific-booking.jpg" />
+    <Content Include="Templates\miniblog\images\contact.jpg" />
     <Content Include="Templates\miniblog\images\hero_1.jpg" />
     <Content Include="Templates\miniblog\images\img_1.jpg" />
     <Content Include="Templates\miniblog\images\img_2.jpg" />
@@ -357,6 +358,7 @@
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Blog\BlogByCategory.cshtml" />
     <Content Include="Views\SubscribeMail\AddMail.cshtml" />
+    <Content Include="Views\Contact\SendMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
