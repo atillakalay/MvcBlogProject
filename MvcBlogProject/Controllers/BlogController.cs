@@ -100,5 +100,10 @@ namespace MvcBlogProject.Controllers
             ViewBag.categoryDescription = categoryDescription;
             return View(blogListByCategory);
         }
+
+        public ActionResult AdminBlogList()
+        {
+            return View();
+        }
     }
 }
