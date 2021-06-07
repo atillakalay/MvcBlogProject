@@ -30,17 +30,24 @@ namespace Business.Concrete
 
         public void Add(About about)
         {
-           _aboutDal.Add(about);
+            _aboutDal.Add(about);
         }
 
         public void Update(About about)
         {
             _aboutDal.Update(about);
+
         }
 
-        public void Delete(About about)
+        public void Delete(int id)
         {
-            _aboutDal.Delete(about);
+            var aboutId = _aboutDal.Get(x => x.AbutId == id);
+            _aboutDal.Delete(aboutId);
+        }
+
+        public About FindAbout(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

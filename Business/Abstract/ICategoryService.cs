@@ -8,7 +8,8 @@ namespace Business.Abstract
         List<Category> GetAll();
         void Add(Category category);
         void Update(Category category);
-        void Delete(Category category);
+        void Delete(int id);
+        Category FindCategory(int id);
         Category GetById(int id);
     }
 }

@@ -33,14 +33,22 @@ namespace Business.Concrete
             _contactDal.Add(contact);
         }
 
+
         public void Update(Contact contact)
         {
             _contactDal.Update(contact);
+
         }
 
-        public void Delete(Contact contact)
+        public void Delete(int id)
         {
-            _contactDal.Delete(contact);
+            var result = _contactDal.Get(x => x.ContactId == id);
+            _contactDal.Delete(result);
+        }
+
+        public Contact FindContact(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

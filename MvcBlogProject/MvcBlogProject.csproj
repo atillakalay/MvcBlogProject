@@ -2450,6 +2450,8 @@
     <Content Include="Templates\AdminLTE-3.0.4\README.md" />
     <Content Include="Views\Shared\AdminLayout.cshtml" />
     <Content Include="Views\Blog\AdminBlogList.cshtml" />
+    <Content Include="Views\Blog\AddNewBlog.cshtml" />
+    <Content Include="Views\Blog\UpdateBlog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -27,20 +27,26 @@ namespace Business.Concrete
         {
             _categoryDal.Add(category);
         }
-
         public void Update(Category category)
         {
             _categoryDal.Update(category);
+
         }
 
-        public void Delete(Category category)
+        public void Delete(int id)
         {
-            _categoryDal.Delete(category);
+            var result = _categoryDal.Get(x => x.CategoryId == id);
+            _categoryDal.Delete(result);
+        }
+
+        public Category FindCategory(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public Category GetById(int id)
         {
-            return _categoryDal.Get(x => x.CategoryId == id);
+            throw new NotImplementedException();
         }
     }
 }

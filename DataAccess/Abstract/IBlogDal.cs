@@ -8,7 +8,7 @@ using Entities.Concrete;
 
 namespace DataAccess.Abstract
 {
-   public interface IBlogDal : IEntityRepository<Blog>
+    public interface IBlogDal : IEntityRepository<Blog>
     {
     }
 }

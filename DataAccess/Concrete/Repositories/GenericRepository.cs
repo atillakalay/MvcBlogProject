@@ -26,12 +26,15 @@ namespace DataAccess.Concrete.Repositories
             addEntity.State = EntityState.Added;
             _efContext.SaveChanges();
         }
-
         public void Delete(T entity)
         {
             var deleteEntity = _efContext.Entry(entity);
             deleteEntity.State = EntityState.Deleted;
             _efContext.SaveChanges();
+        }
+        public T GetById(Expression<Func<T, bool>> filter)
+        {
+            return _object.SingleOrDefault(filter);
         }
 
         public List<T> List()

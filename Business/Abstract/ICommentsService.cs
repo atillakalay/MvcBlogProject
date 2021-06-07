@@ -13,7 +13,8 @@ namespace Business.Abstract
         Comment GetById(int id);
         void Add(Comment comment);
         void Update(Comment comment);
-        void Delete(Comment comment);
+        void Delete(int id);
+        Comment FindComment(int id);
         List<Comment> CommentByBlog(int id);
     }
 }

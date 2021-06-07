@@ -13,6 +13,6 @@ namespace Business.Abstract
         SubscribeMail GetById(int id);
         void Add(SubscribeMail subscribeMail);
         void Update(SubscribeMail subscribeMail);
-        void Delete(SubscribeMail subscribeMail);
+        void Delete(int id);
     }
 }

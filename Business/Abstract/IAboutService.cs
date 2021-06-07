@@ -13,6 +13,7 @@ namespace Business.Abstract
         About GetById(int id);
         void Add(About about);
         void Update(About about);
-        void Delete(About about);
+        void Delete(int id);
+        About FindAbout(int id);
     }
 }

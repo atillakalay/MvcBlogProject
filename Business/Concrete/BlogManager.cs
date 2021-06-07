@@ -18,6 +18,7 @@ namespace Business.Concrete
             _blogDal = blogDal;
         }
 
+
         public List<Blog> GetAll()
         {
             return _blogDal.List();
@@ -45,12 +46,26 @@ namespace Business.Concrete
 
         public void Update(Blog blog)
         {
-            _blogDal.Update(blog);
+            Blog result = _blogDal.GetById(x => x.BlogId == blog.BlogId);
+            result.BlogTitle = blog.BlogTitle;
+            result.BlogContent = blog.BlogContent;
+            result.BlogDate = blog.BlogDate;
+            result.BlogImage = blog.BlogImage;
+            result.CategoryId = blog.CategoryId;
+            result.AuthorId = blog.AuthorId;
+            _blogDal.Update(result);
+
         }
 
-        public void Delete(Blog blog)
+        public void Delete(int id)
         {
-            _blogDal.Delete(blog);
+          var blogId=  _blogDal.Get(x => x.BlogId == id);
+          _blogDal.Delete(blogId);
+        }
+
+        public Blog FindBlog(int id)
+        {
+           return _blogDal.Get(x => x.BlogId == id);
         }
     }
 }

@@ -36,11 +36,18 @@ namespace Business.Concrete
         public void Update(Comment comment)
         {
             _commentDal.Update(comment);
+
         }
 
-        public void Delete(Comment comment)
+        public void Delete(int id)
         {
-            _commentDal.Delete(comment);
+            var blogId = _commentDal.Get(x => x.BlogId == id);
+            _commentDal.Delete(blogId);
+        }
+
+        public Comment FindComment(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public List<Comment> CommentByBlog(int id)

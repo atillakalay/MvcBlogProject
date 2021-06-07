@@ -36,11 +36,13 @@ namespace Business.Concrete
         public void Update(SubscribeMail subscribeMail)
         {
             _subscribeMailDal.Update(subscribeMail);
+
         }
 
-        public void Delete(SubscribeMail subscribeMail)
+        public void Delete(int id)
         {
-            _subscribeMailDal.Delete(subscribeMail);
+            var mailId = _subscribeMailDal.Get(x => x.MailId == id);
+            _subscribeMailDal.Delete(mailId);
         }
     }
 }

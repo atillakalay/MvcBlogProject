@@ -32,15 +32,21 @@ namespace Business.Concrete
         {
             _authorDal.Add(author);
         }
-
         public void Update(Author author)
         {
             _authorDal.Update(author);
+
         }
 
-        public void Delete(Author author)
+        public void Delete(int id)
         {
-            _authorDal.Delete(author);
+            var result = _authorDal.Get(x => x.AuthorId == id);
+            _authorDal.Delete(result);
+        }
+
+        public Author findAuthor(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

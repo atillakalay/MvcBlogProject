@@ -1,7 +1,9 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Business.Concrete;
 using System.Web.Mvc;
 using DataAccess.Concrete.EntityFramework;
+using Entities.Concrete;
 using PagedList;
 
 namespace MvcBlogProject.Controllers
@@ -103,7 +105,73 @@ namespace MvcBlogProject.Controllers
 
         public ActionResult AdminBlogList()
         {
+            var result = _blogManager.GetAll();
+            return View(result);
+        }
+        [HttpGet]
+        public ActionResult AddNewBlog()
+        {
+            EfContext efContext = new EfContext();
+            List<SelectListItem> valuesCategory = (from x in efContext.Categories.ToList()
+                                                   select new SelectListItem
+                                                   {
+                                                       Text = x.CategoryName,
+                                                       Value = x.CategoryId.ToString()
+                                                   }).ToList();
+            ViewBag.valuesCategory = valuesCategory;
+
+            List<SelectListItem> valuesAuthor = (from x in efContext.Authors.ToList()
+                                                 select new SelectListItem
+                                                 {
+                                                     Text = x.AuthorName,
+                                                     Value = x.AuthorId.ToString()
+                                                 }).ToList();
+            ViewBag.valuesAuthor = valuesAuthor;
+
             return View();
         }
+        [HttpPost]
+        public ActionResult AddNewBlog(Blog blog)
+        {
+            _blogManager.Add(blog);
+            return RedirectToAction("AdminBlogList");
+        }
+
+        public ActionResult DeleteBlog(int id)
+        {
+            _blogManager.Delete(id);
+            return RedirectToAction("AdminBlogList");
+        }
+        [HttpGet]
+        public ActionResult UpdateBlog(int id)
+        {
+            Blog blog = _blogManager.FindBlog(id);
+            EfContext efContext = new EfContext();
+            List<SelectListItem> valuesCategory = (from x in efContext.Categories.ToList()
+                                                   select new SelectListItem
+                                                   {
+                                                       Text = x.CategoryName,
+                                                       Value = x.CategoryId.ToString()
+                                                   }).ToList();
+            ViewBag.valuesCategory = valuesCategory;
+
+            List<SelectListItem> valuesAuthor = (from x in efContext.Authors.ToList()
+                                                 select new SelectListItem
+                                                 {
+                                                     Text = x.AuthorName,
+                                                     Value = x.AuthorId.ToString()
+                                                 }).ToList();
+            ViewBag.valuesAuthor = valuesAuthor;
+            return View(blog);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateBlog(Blog blog)
+        {
+            _blogManager.Update(blog);
+            return RedirectToAction("AdminBlogList");
+        }
+
+
     }
 }
