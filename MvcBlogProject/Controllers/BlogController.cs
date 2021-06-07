@@ -172,6 +172,12 @@ namespace MvcBlogProject.Controllers
             return RedirectToAction("AdminBlogList");
         }
 
+        public ActionResult GetCommentByBlog(int id)
+        {
+            CommentManager commentManager = new CommentManager(new EfCommentDal());
+            var result = commentManager.CommentByBlog(id);
+            return View(result);
+        }
 
     }
 }

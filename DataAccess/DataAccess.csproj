@@ -80,6 +80,10 @@
     <Compile Include="Migrations\202106051943100_mig_categoryDescriptionAdded.designer.cs">
       <DependentUpon>202106051943100_mig_categoryDescriptionAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106071052192_mig_authorUpdate.cs" />
+    <Compile Include="Migrations\202106071052192_mig_authorUpdate.designer.cs">
+      <DependentUpon>202106071052192_mig_authorUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -92,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106051943100_mig_categoryDescriptionAdded.resx">
       <DependentUpon>202106051943100_mig_categoryDescriptionAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106071052192_mig_authorUpdate.resx">
+      <DependentUpon>202106071052192_mig_authorUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

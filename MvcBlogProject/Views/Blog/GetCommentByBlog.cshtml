@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Entities.Concrete.Comment>
+@{
+    ViewBag.Title = "GetCommentByBlog";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="timeline">
+                            @foreach (var item in Model)
+                            {
+                                <div class="time-label">
+                                    <span class="bg-success">@(((DateTime)item.CommentDate).ToString("dd-MMM-yyyy"))</span>
+                                </div>
+                                <div>
+                                    <i class="fas fa-comment bg-yellow"></i>
+                                    <div class="timeline-item">
+                                        <h3 class="timeline-header"><a href="#">@item.UserName</a>'ın yaptığı yorum .</h3>
+
+                                        <div class="timeline-body">
+                                            @item.CommentText
+                                        </div>
+                                      @*<div class="timeline-footer">
+                                            <a class="btn btn-primary btn-sm">Read more</a>
+                                            <a class="btn btn-danger btn-sm">Delete</a>
+                                        </div>*@
+                                    </div>
+                                </div>
+                                <div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+
+

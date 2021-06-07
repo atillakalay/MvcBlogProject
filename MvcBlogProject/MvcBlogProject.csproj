@@ -2452,6 +2452,8 @@
     <Content Include="Views\Blog\AdminBlogList.cshtml" />
     <Content Include="Views\Blog\AddNewBlog.cshtml" />
     <Content Include="Views\Blog\UpdateBlog.cshtml" />
+    <Content Include="Views\Blog\GetCommentByBlog.cshtml" />
+    <Content Include="Views\Author\AuthorList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
