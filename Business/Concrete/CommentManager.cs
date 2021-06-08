@@ -23,6 +23,16 @@ namespace Business.Concrete
             return _commentDal.List();
         }
 
+        public List<Comment> CommentByStatusTrue()
+        {
+            return _commentDal.List(x => x.CommentStatus == true);
+        }
+
+        public List<Comment> CommentByStatusFalse()
+        {
+            return _commentDal.List(x => x.CommentStatus == false);
+        }
+
         public Comment GetById(int id)
         {
             return _commentDal.Get(x => x.CommentId == id);
@@ -35,8 +45,23 @@ namespace Business.Concrete
 
         public void Update(Comment comment)
         {
-            _commentDal.Update(comment);
+            Comment result = _commentDal.GetById(x => x.CommentId == comment.CommentId);
+            result.CommentStatus = false;
+            _commentDal.Update(result);
 
+        }
+
+        public void UpdateToStatusFalse(int id)
+        {
+            Comment result = _commentDal.GetById(x => x.CommentId == id);
+            result.CommentStatus = false;
+            _commentDal.Update(result);
+        }
+        public void UpdateToStatusTrue(int id)
+        {
+            Comment result = _commentDal.GetById(x => x.CommentId == id);
+            result.CommentStatus = true;
+            _commentDal.Update(result);
         }
 
         public void Delete(int id)

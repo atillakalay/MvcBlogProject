@@ -10,9 +10,14 @@ namespace Business.Abstract
     public interface ICommentsService
     {
         List<Comment> GetAll();
+        List<Comment> CommentByStatusTrue();
+        List<Comment> CommentByStatusFalse();
         Comment GetById(int id);
+
         void Add(Comment comment);
         void Update(Comment comment);
+        void UpdateToStatusFalse(int id);
+        void UpdateToStatusTrue(int id);
         void Delete(int id);
         Comment FindComment(int id);
         List<Comment> CommentByBlog(int id);

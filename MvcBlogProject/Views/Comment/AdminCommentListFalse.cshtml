@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Entities.Concrete.Comment>
+@{
+    ViewBag.Title = "AdminCommentListFalse";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <section class="content">
+
+            <div class="card-body">
+                <div class="tab-content">
+                    <div class="active tab-pane" id="activity">
+                        <!-- Post -->
+                        @foreach (var item in Model)
+                        {
+                            <div class="post">
+                                <div class="user-block">
+                                    <img class="img-circle img-bordered-sm" src="../../Templates/AdminLTE-3.0.4/dist/img/user1-128x128.jpg" alt="user image">
+                                    <span class="username">
+                                        <a href="#">@item.UserName - @item.Blog.BlogTitle</a>
+                                    </span>
+                                    <span class="description">@(((DateTime)item.CommentDate).ToString("dd-MMM-yyyy"))</span>
+                                </div>
+                                <!-- /.user-block -->
+                                <p>
+                                    @item.CommentText
+                                </p>
+                                <p>
+                                    <span class="float-right">
+                                        <a href="/Comment/StatusChangeToTrue/@item.CommentId" class="link-black text-sm">
+                                            <i class="far fa-window-close mr-1"></i> Yorumu Onayla
+                                        </a>
+                                    </span>
+                                    <br />
+                                </p>
+
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+
+
+
+

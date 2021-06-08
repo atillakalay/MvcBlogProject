@@ -30,5 +30,27 @@ namespace MvcBlogProject.Controllers
             _commentManager.Add(comment);
             return PartialView();
         }
+
+        public ActionResult AdminCommentListTrue()
+        {
+            var result = _commentManager.CommentByStatusTrue();
+            return View(result);
+        }
+        public ActionResult AdminCommentListFalse()
+        {
+            var result = _commentManager.CommentByStatusFalse();
+            return View(result);
+        }
+
+        public ActionResult StatusChangeToFalse(int id)
+        {
+            _commentManager.UpdateToStatusFalse(id);
+            return RedirectToAction("AdminCommentListTrue");
+        }
+        public ActionResult StatusChangeToTrue(int id)
+        {
+            _commentManager.UpdateToStatusTrue(id);
+            return RedirectToAction("AdminCommentListFalse");
+        }
     }
 }

@@ -202,6 +202,7 @@
     <Content Include="Templates\AdminLTE-3.0.4\dist\css\alt\adminlte.plugins.css" />
     <Content Include="Templates\AdminLTE-3.0.4\dist\css\alt\adminlte.plugins.min.css" />
     <Content Include="Templates\AdminLTE-3.0.4\dist\img\AdminLTELogo.png" />
+    <Content Include="Templates\AdminLTE-3.0.4\dist\img\atilla.jpg" />
     <Content Include="Templates\AdminLTE-3.0.4\dist\img\avatar.png" />
     <Content Include="Templates\AdminLTE-3.0.4\dist\img\avatar04.png" />
     <Content Include="Templates\AdminLTE-3.0.4\dist\img\avatar2.png" />
@@ -2456,6 +2457,8 @@
     <Content Include="Views\Author\AuthorList.cshtml" />
     <Content Include="Views\Author\Add.cshtml" />
     <Content Include="Views\Author\Update.cshtml" />
+    <Content Include="Views\Comment\AdminCommentListTrue.cshtml" />
+    <Content Include="Views\Comment\AdminCommentListFalse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

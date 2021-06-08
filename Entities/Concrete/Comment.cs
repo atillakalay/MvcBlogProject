@@ -20,6 +20,7 @@ namespace Entities.Concrete
         public string CommentText { get; set; }
 
         public DateTime CommentDate { get; set; }
+        public bool CommentStatus { get; set; }
         public virtual Blog Blog { get; set; }
     }
 }
