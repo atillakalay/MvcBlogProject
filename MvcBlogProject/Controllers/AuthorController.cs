@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
+using Entities.Concrete;
 
 namespace MvcBlogProject.Controllers
 {
@@ -30,6 +31,29 @@ namespace MvcBlogProject.Controllers
         {
             var result = _authorManager.GetAll();
             return View(result);
+        }
+        [HttpGet]
+        public ActionResult Add()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Add(Author author)
+        {
+            _authorManager.Add(author);
+            return RedirectToAction("AuthorList");
+        }
+        [HttpGet]
+        public ActionResult Update(int id)
+        {
+            Author author = _authorManager.FindAuthor(id);
+            return View(author);
+        }
+        [HttpPost]
+        public ActionResult Update(Author author)
+        {
+            _authorManager.Update(author);
+            return RedirectToAction("AuthorList");
         }
     }
 }

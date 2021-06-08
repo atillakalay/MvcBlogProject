@@ -14,6 +14,6 @@ namespace Business.Abstract
         void Add(Author author);
         void Update(Author author);
         void Delete(int id);
-        Author findAuthor(int id);
+        Author FindAuthor(int id);
     }
 }

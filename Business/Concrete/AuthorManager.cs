@@ -34,8 +34,16 @@ namespace Business.Concrete
         }
         public void Update(Author author)
         {
-            _authorDal.Update(author);
-
+            Author result = _authorDal.GetById(x => x.AuthorId == author.AuthorId);
+            result.AuthorName = author.AuthorName;
+            result.Password = author.Password;
+            result.AboutShort = author.AboutShort;
+            result.AuthorAbout = author.AuthorAbout;
+            result.AuthorImage = author.AuthorImage;
+            result.AuthorJob = author.AuthorJob;
+            result.Email = author.Email;
+            result.PhoneNumber = author.PhoneNumber;
+            _authorDal.Update(result);
         }
 
         public void Delete(int id)
@@ -44,9 +52,9 @@ namespace Business.Concrete
             _authorDal.Delete(result);
         }
 
-        public Author findAuthor(int id)
+        public Author FindAuthor(int id)
         {
-            throw new NotImplementedException();
+            return _authorDal.Get(x => x.AuthorId == id);
         }
     }
 }
