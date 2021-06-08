@@ -108,6 +108,12 @@ namespace MvcBlogProject.Controllers
             var result = _blogManager.GetAll();
             return View(result);
         }
+        public ActionResult AdminBlogList2()
+        {
+            var result = _blogManager.GetAll();
+            return View(result);
+        }
+
         [HttpGet]
         public ActionResult AddNewBlog()
         {

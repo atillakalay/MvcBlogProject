@@ -29,6 +29,10 @@ namespace Business.Concrete
         }
         public void Update(Category category)
         {
+            Category result = _categoryDal.GetById(x => x.CategoryId == category.CategoryId);
+            result.CategoryName = category.CategoryName;
+            result.Blogs = category.Blogs;
+            result.CategoryDescription = category.CategoryDescription;
             _categoryDal.Update(category);
 
         }
@@ -46,7 +50,7 @@ namespace Business.Concrete
 
         public Category GetById(int id)
         {
-            throw new NotImplementedException();
+           return _categoryDal.Get(x => x.CategoryId == id);
         }
     }
 }

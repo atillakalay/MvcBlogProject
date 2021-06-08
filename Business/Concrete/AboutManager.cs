@@ -35,7 +35,14 @@ namespace Business.Concrete
 
         public void Update(About about)
         {
-            _aboutDal.Update(about);
+            About resultAbout = _aboutDal.GetById(x => x.AbutId == about.AbutId);
+            resultAbout.AbutId = about.AbutId;
+            resultAbout.AboutImage1 = about.AboutImage1;
+            resultAbout.AboutImage2 = about.AboutImage2;
+            resultAbout.AboutContent1 = about.AboutContent1;
+            resultAbout.AboutContent2 = about.AboutContent2;
+         
+            _aboutDal.Update(resultAbout);
 
         }
 

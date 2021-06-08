@@ -2459,6 +2459,9 @@
     <Content Include="Views\Author\Update.cshtml" />
     <Content Include="Views\Comment\AdminCommentListTrue.cshtml" />
     <Content Include="Views\Comment\AdminCommentListFalse.cshtml" />
+    <Content Include="Views\Category\AdminCategoryList.cshtml" />
+    <Content Include="Views\Blog\AdminBlogList2.cshtml" />
+    <Content Include="Views\About\UpdateAboutList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

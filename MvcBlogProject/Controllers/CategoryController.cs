@@ -22,5 +22,11 @@ namespace MvcBlogProject.Controllers
             var result = _categoryManager.GetAll();
             return PartialView(result);
         }
+
+        public ActionResult AdminCategoryList()
+        {
+            var result = _categoryManager.GetAll();
+            return View(result);
+        }
     }
 }
