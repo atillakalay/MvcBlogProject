@@ -28,5 +28,22 @@ namespace MvcBlogProject.Controllers
             _contactManager.Add(contact);
             return View();
         }
+
+        public ActionResult InBox()
+        {
+            var result = _contactManager.GetAll();
+            return View(result);
+        }
+        public ActionResult SendBox()
+        {
+            var result = _contactManager.GetAll();
+            return View(result);
+        }
+
+        public ActionResult MessageDetails(int id)
+        {
+            Contact contact = _contactManager.GetById(id);
+            return View(contact);
+        }
     }
 }

@@ -139,6 +139,7 @@
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\SubscribeMailController.cs" />
@@ -2462,6 +2463,10 @@
     <Content Include="Views\Category\AdminCategoryList.cshtml" />
     <Content Include="Views\Blog\AdminBlogList2.cshtml" />
     <Content Include="Views\About\UpdateAboutList.cshtml" />
+    <Content Include="Views\Contact\SendBox.cshtml" />
+    <Content Include="Views\Contact\MessageDetails.cshtml" />
+    <Content Include="Views\Contact\InBox.cshtml" />
+    <Content Include="Views\Chart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
