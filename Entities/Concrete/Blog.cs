@@ -20,9 +20,9 @@ namespace Entities.Concrete
         [StringLength(100)]
         public string BlogImage { get; set; }
 
-
         public DateTime BlogDate { get; set; }
         public string BlogContent { get; set; }
+        public int BlogRating { get; set; }
 
         public virtual Category Category { get; set; }
         public virtual Author Author { get; set; }

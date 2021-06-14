@@ -92,6 +92,10 @@
     <Compile Include="Migrations\202106101405322_mig_contactMessageDateAdded.designer.cs">
       <DependentUpon>202106101405322_mig_contactMessageDateAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106140545374_mig_blogRatingAdded.cs" />
+    <Compile Include="Migrations\202106140545374_mig_blogRatingAdded.designer.cs">
+      <DependentUpon>202106140545374_mig_blogRatingAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -113,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106101405322_mig_contactMessageDateAdded.resx">
       <DependentUpon>202106101405322_mig_contactMessageDateAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106140545374_mig_blogRatingAdded.resx">
+      <DependentUpon>202106140545374_mig_blogRatingAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
