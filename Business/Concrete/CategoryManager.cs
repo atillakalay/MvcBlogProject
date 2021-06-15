@@ -31,9 +31,8 @@ namespace Business.Concrete
         {
             Category result = _categoryDal.GetById(x => x.CategoryId == category.CategoryId);
             result.CategoryName = category.CategoryName;
-            result.Blogs = category.Blogs;
             result.CategoryDescription = category.CategoryDescription;
-            _categoryDal.Update(category);
+            _categoryDal.Update(result);
 
         }
 

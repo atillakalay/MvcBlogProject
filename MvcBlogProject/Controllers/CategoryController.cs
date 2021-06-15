@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
+using Entities.Concrete;
 
 namespace MvcBlogProject.Controllers
 {
@@ -27,6 +28,29 @@ namespace MvcBlogProject.Controllers
         {
             var result = _categoryManager.GetAll();
             return View(result);
+        }
+        [HttpGet]
+        public ActionResult AdminCategoryAdd()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AdminCategoryAdd(Category category)
+        {
+            _categoryManager.Add(category);
+            return RedirectToAction("AdminCategoryList");
+        }
+        [HttpGet]
+        public ActionResult Update(int id)
+        {
+            Category category = _categoryManager.GetById(id);
+            return View(category);
+        }
+        [HttpPost]
+        public ActionResult Update(Category category)
+        {
+            _categoryManager.Update(category);
+            return RedirectToAction("AdminCategoryList");
         }
     }
 }

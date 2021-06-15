@@ -40,6 +40,7 @@ namespace Business.Concrete
 
         public void Add(Comment comment)
         {
+            comment.CommentStatus = true;
             _commentDal.Add(comment);
         }
 

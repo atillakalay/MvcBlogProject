@@ -2133,6 +2133,7 @@
     <Content Include="Templates\miniblog\images\cebupacific-booking.jpg" />
     <Content Include="Templates\miniblog\images\contact.jpg" />
     <Content Include="Templates\miniblog\images\hero_1.jpg" />
+    <Content Include="Templates\miniblog\images\images.png" />
     <Content Include="Templates\miniblog\images\img_1.jpg" />
     <Content Include="Templates\miniblog\images\img_2.jpg" />
     <Content Include="Templates\miniblog\images\img_3.jpg" />
@@ -2716,6 +2717,8 @@
     <Content Include="Templates\Login_v17\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Templates\Login_v17\vendor\bootstrap\css\bootstrap.min.css.map" />
     <Content Include="Views\Login\AdminLogin.cshtml" />
+    <Content Include="Views\Blog\AuthorBlogList.cshtml" />
+    <Content Include="Views\Category\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

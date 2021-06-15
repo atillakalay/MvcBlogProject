@@ -203,6 +203,11 @@ namespace MvcBlogProject.Controllers
             var result = commentManager.CommentByBlog(id);
             return View(result);
         }
+        public ActionResult AuthorBlogList(int id)
+        {
+            var blogs = _blogManager.GetBlogByAuthor(id);
+            return View(blogs);
+        }
 
     }
 }
