@@ -13,18 +13,22 @@ namespace MvcBlogProject.Controllers
     {
         // GET: Contact
         private ContactManager _contactManager = new ContactManager(new EfContactDal());
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();
         }
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult SendMessage()
         {
             return View();
         }
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult SendMessage(Contact contact)
         {
+            contact.MessageDate=DateTime.Now;;
             _contactManager.Add(contact);
             return View();
         }

@@ -5,8 +5,10 @@ using Entities.Concrete;
 
 namespace MvcBlogProject.Controllers
 {
+    [AllowAnonymous]
     public class SubscribeMailController : Controller
     {
+      
         private SubscribeMailManager _subscribeMailManager = new SubscribeMailManager(new EfSubscribeMailDal());
         [HttpGet]
         public PartialViewResult AddMail()

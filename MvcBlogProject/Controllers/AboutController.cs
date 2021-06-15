@@ -9,6 +9,7 @@ using Entities.Concrete;
 
 namespace MvcBlogProject.Controllers
 {
+    [AllowAnonymous]
     public class AboutController : Controller
     {
         private AboutManager _aboutManager = new AboutManager(new EfAboutDal());

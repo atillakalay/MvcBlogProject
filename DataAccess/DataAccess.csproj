@@ -96,6 +96,10 @@
     <Compile Include="Migrations\202106140545374_mig_blogRatingAdded.designer.cs">
       <DependentUpon>202106140545374_mig_blogRatingAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106150921516_mig_adminRoleAdded.cs" />
+    <Compile Include="Migrations\202106150921516_mig_adminRoleAdded.designer.cs">
+      <DependentUpon>202106150921516_mig_adminRoleAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -120,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106140545374_mig_blogRatingAdded.resx">
       <DependentUpon>202106140545374_mig_blogRatingAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106150921516_mig_adminRoleAdded.resx">
+      <DependentUpon>202106150921516_mig_adminRoleAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

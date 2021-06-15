@@ -16,7 +16,7 @@ namespace MvcBlogProject.Controllers
         {
             return View();
         }
-
+        [AllowAnonymous]
         public PartialViewResult BlogDetailsCategoryList()
         {
             var result = _categoryManager.GetAll();

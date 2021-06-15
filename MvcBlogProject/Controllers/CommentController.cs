@@ -13,17 +13,20 @@ namespace MvcBlogProject.Controllers
     {
         // GET: Comment
         private CommentManager _commentManager = new CommentManager(new EfCommentDal());
+        [AllowAnonymous]
         public PartialViewResult CommentList(int id)
         {
             var result = _commentManager.CommentByBlog(id);
             return PartialView(result);
         }
+        [AllowAnonymous]
         [HttpGet]
         public PartialViewResult LeaveComment(int id)
         {
             ViewBag.id = id;
             return PartialView();
         }
+        [AllowAnonymous]
         [HttpPost]
         public PartialViewResult LeaveComment(Comment comment)
         {

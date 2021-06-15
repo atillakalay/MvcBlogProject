@@ -9,6 +9,7 @@ using Entities.Concrete;
 
 namespace MvcBlogProject.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         [HttpGet]
@@ -32,6 +33,30 @@ namespace MvcBlogProject.Controllers
             else
             {
                 return RedirectToAction("AuthorLogin", "Login");
+            }
+        }
+
+        [HttpGet]
+        public ActionResult AdminLogin()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AdminLogin(Admin admin)
+        {
+            EfContext context = new EfContext();
+            var adminInfo =
+                context.Admins.FirstOrDefault(x => x.UserName ==
+                    admin.UserName && x.Password == admin.Password);
+            if (adminInfo != null)
+            {
+                FormsAuthentication.SetAuthCookie(adminInfo.UserName, false);
+                Session["UserName"] = adminInfo.UserName.ToString();
+                return RedirectToAction("AdminBlogList", "Blog");
+            }
+            else
+            {
+                return RedirectToAction("AdminLogin", "Login");
             }
         }
     }
