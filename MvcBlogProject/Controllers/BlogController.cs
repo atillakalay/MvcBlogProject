@@ -132,7 +132,7 @@ namespace MvcBlogProject.Controllers
             var result = _blogManager.GetAll();
             return View(result);
         }
-
+        [Authorize(Roles = "A")]
         [HttpGet]
         public ActionResult AddNewBlog()
         {
@@ -155,6 +155,7 @@ namespace MvcBlogProject.Controllers
 
             return View();
         }
+      
         [HttpPost]
         public ActionResult AddNewBlog(Blog blog)
         {

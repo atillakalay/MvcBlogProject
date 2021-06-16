@@ -52,5 +52,16 @@ namespace MvcBlogProject.Controllers
             _categoryManager.Update(category);
             return RedirectToAction("AdminCategoryList");
         }
+        public ActionResult CategoryStatusTrue(int id)
+        {
+            _categoryManager.CategoryStatusTrue(id);
+            return RedirectToAction("AdminCategoryList");
+        }
+        public ActionResult CategoryStatusFalse(int id)
+        {
+            _categoryManager.CategoryStatusFalse(id);
+            return RedirectToAction("AdminCategoryList");
+        }
     }
+
 }

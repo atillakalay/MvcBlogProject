@@ -60,6 +60,7 @@
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\ISubscribeMailDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfAboutDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfAdminDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfAuthorDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfBlogDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
@@ -100,6 +101,14 @@
     <Compile Include="Migrations\202106150921516_mig_adminRoleAdded.designer.cs">
       <DependentUpon>202106150921516_mig_adminRoleAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106161646047_mig_categoryStatusAdded.cs" />
+    <Compile Include="Migrations\202106161646047_mig_categoryStatusAdded.designer.cs">
+      <DependentUpon>202106161646047_mig_categoryStatusAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106161722094_mig_commentBlogRatingAdded.cs" />
+    <Compile Include="Migrations\202106161722094_mig_commentBlogRatingAdded.designer.cs">
+      <DependentUpon>202106161722094_mig_commentBlogRatingAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -127,6 +136,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106150921516_mig_adminRoleAdded.resx">
       <DependentUpon>202106150921516_mig_adminRoleAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106161646047_mig_categoryStatusAdded.resx">
+      <DependentUpon>202106161646047_mig_categoryStatusAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106161722094_mig_commentBlogRatingAdded.resx">
+      <DependentUpon>202106161722094_mig_commentBlogRatingAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

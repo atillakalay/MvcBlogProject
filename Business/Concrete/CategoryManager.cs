@@ -25,6 +25,7 @@ namespace Business.Concrete
 
         public void Add(Category category)
         {
+            category.CategoryStatus = true;
             _categoryDal.Add(category);
         }
         public void Update(Category category)
@@ -36,10 +37,18 @@ namespace Business.Concrete
 
         }
 
-        public void Delete(int id)
+        public void CategoryStatusFalse(int id)
         {
-            var result = _categoryDal.Get(x => x.CategoryId == id);
-            _categoryDal.Delete(result);
+            Category category = _categoryDal.Get(x => x.CategoryId == id);
+            category.CategoryStatus = false;
+            _categoryDal.Update(category);
+        }
+
+        public void CategoryStatusTrue(int id)
+        {
+            Category category = _categoryDal.Get(x => x.CategoryId == id);
+            category.CategoryStatus = true;
+            _categoryDal.Update(category);
         }
 
         public Category FindCategory(int id)
@@ -49,7 +58,7 @@ namespace Business.Concrete
 
         public Category GetById(int id)
         {
-           return _categoryDal.Get(x => x.CategoryId == id);
+            return _categoryDal.Get(x => x.CategoryId == id);
         }
     }
 }
