@@ -80,5 +80,15 @@ namespace Business.Concrete
         {
             return _commentDal.List(x => x.BlogId == id);
         }
+
+        public List<Comment> CommentByStatusTrueAndBlogId(int id)
+        {
+            return _commentDal.List(x => x.CommentStatus == true&&x.Blog.AuthorId==id);
+        }
+
+        public List<Comment> CommentByStatusFalseAndBlogId(int id)
+        {
+            return _commentDal.List(x => x.CommentStatus == false && x.Blog.AuthorId == id);
+        }
     }
 }

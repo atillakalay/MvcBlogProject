@@ -44,6 +44,32 @@ namespace MvcBlogProject.Controllers
             var result = _commentManager.CommentByStatusFalse();
             return View(result);
         }
+        public ActionResult AuthorCommentListTrue(string email)
+        {
+            EfContext efContext = new EfContext();
+            email = (string)Session["Email"];
+            int id = efContext.Authors.Where(x => x.Email == email).Select(y => y.AuthorId).FirstOrDefault();
+            var result = _commentManager.CommentByStatusTrueAndBlogId(id);
+            return View(result);
+        }
+        public ActionResult AuthorCommentListFalse(string email)
+        {
+            EfContext efContext = new EfContext();
+            email = (string)Session["Email"];
+            int id = efContext.Authors.Where(x => x.Email == email).Select(y => y.AuthorId).FirstOrDefault();
+            var result = _commentManager.CommentByStatusFalseAndBlogId(id);
+            return View(result);
+        }
+        public ActionResult StatusChangeToFalseByAuthor(int id)
+        {
+            _commentManager.UpdateToStatusFalse(id);
+            return RedirectToAction("AuthorCommentListTrue");
+        }
+        public ActionResult StatusChangeToTrueByAuthor(int id)
+        {
+            _commentManager.UpdateToStatusTrue(id);
+            return RedirectToAction("AuthorCommentListFalse");
+        }
 
         public ActionResult StatusChangeToFalse(int id)
         {

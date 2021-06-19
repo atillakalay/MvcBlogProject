@@ -13,7 +13,6 @@ namespace Business.Abstract
         List<Comment> CommentByStatusTrue();
         List<Comment> CommentByStatusFalse();
         Comment GetById(int id);
-
         void Add(Comment comment);
         void Update(Comment comment);
         void UpdateToStatusFalse(int id);
@@ -21,5 +20,8 @@ namespace Business.Abstract
         void Delete(int id);
         Comment FindComment(int id);
         List<Comment> CommentByBlog(int id);
+
+        List<Comment> CommentByStatusTrueAndBlogId(int id);
+        List<Comment> CommentByStatusFalseAndBlogId(int id);
     }
 }
