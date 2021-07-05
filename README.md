@@ -1,5 +1,7 @@
 # Mvc5 İle Blog Projesi
 
+Projeme https://mvcminiblog.me/ sitesinden ulaşabilirsiniz.
+
 Merhaba, bu proje genel olarak katmanlı mimariye uygun bir şekilde tasarlanmıştır . OOP olarak Entity Framework kullanılmaktadır .
 
 ## Kullanılan Araçlar & Alt Yapılar & Teknolojiler
