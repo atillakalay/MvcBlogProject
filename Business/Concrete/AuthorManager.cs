@@ -32,6 +32,12 @@ namespace Business.Concrete
         {
             _authorDal.Add(author);
         }
+
+        public void Delete(Author entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(Author author)
         {
             Author result = _authorDal.GetById(x => x.AuthorId == author.AuthorId);

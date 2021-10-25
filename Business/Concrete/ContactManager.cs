@@ -50,5 +50,10 @@ namespace Business.Concrete
         {
             throw new NotImplementedException();
         }
+
+        public void Delete(Contact entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

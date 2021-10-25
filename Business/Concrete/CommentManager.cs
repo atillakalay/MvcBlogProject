@@ -44,6 +44,11 @@ namespace Business.Concrete
             _commentDal.Add(comment);
         }
 
+        public void Delete(Comment entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(Comment comment)
         {
             Comment result = _commentDal.GetById(x => x.CommentId == comment.CommentId);

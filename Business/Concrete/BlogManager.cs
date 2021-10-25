@@ -24,6 +24,11 @@ namespace Business.Concrete
             return _blogDal.List();
         }
 
+        public Blog GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Blog> BlogById(int id)
         {
             return _blogDal.List(x => x.BlogId == id);
@@ -42,6 +47,11 @@ namespace Business.Concrete
         public void Add(Blog blog)
         {
             _blogDal.Add(blog);
+        }
+
+        public void Delete(Blog entity)
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(Blog blog)

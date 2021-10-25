@@ -44,5 +44,10 @@ namespace Business.Concrete
             var mailId = _subscribeMailDal.Get(x => x.MailId == id);
             _subscribeMailDal.Delete(mailId);
         }
+
+        public void Delete(SubscribeMail entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -7,13 +7,9 @@ using Entities.Concrete;
 
 namespace Business.Abstract
 {
-    public interface IAdminService
+    public interface IAdminService:IGenericService<Admin>
     {
-        void Add(Admin admin);
-        void Update(Admin admin);
-        void Delete(Admin admin);
         List<Admin> GetAdmins();
-        Admin GetById(int id);
         Admin GetByAdminUserName(string username);
     }
 }

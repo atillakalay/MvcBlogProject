@@ -33,6 +33,11 @@ namespace Business.Concrete
           return _adminDal.List();
       }
 
+      public List<Admin> GetAll()
+      {
+          throw new NotImplementedException();
+      }
+
       public Admin GetById(int id)
       {
           return _adminDal.Get(a => a.AdminId == id);
@@ -47,5 +52,10 @@ namespace Business.Concrete
       {
           _adminDal.Update(admin);
       }
-    }
+
+      public void Delete(int id)
+      {
+          throw new NotImplementedException();
+      }
+  }
 }

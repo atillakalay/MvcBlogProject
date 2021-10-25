@@ -18,6 +18,11 @@ namespace Business.Concrete
             _categoryDal = categoryDal;
         }
 
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Category> GetAll()
         {
             return _categoryDal.List();
@@ -28,6 +33,12 @@ namespace Business.Concrete
             category.CategoryStatus = true;
             _categoryDal.Add(category);
         }
+
+        public void Delete(Category entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(Category category)
         {
             Category result = _categoryDal.GetById(x => x.CategoryId == category.CategoryId);

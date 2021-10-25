@@ -33,6 +33,11 @@ namespace Business.Concrete
             _aboutDal.Add(about);
         }
 
+        public void Delete(About entity)
+        {
+            _aboutDal.Delete(entity);
+        }
+
         public void Update(About about)
         {
             About resultAbout = _aboutDal.GetById(x => x.AbutId == about.AbutId);
@@ -41,7 +46,7 @@ namespace Business.Concrete
             resultAbout.AboutImage2 = about.AboutImage2;
             resultAbout.AboutContent1 = about.AboutContent1;
             resultAbout.AboutContent2 = about.AboutContent2;
-         
+
             _aboutDal.Update(resultAbout);
 
         }
