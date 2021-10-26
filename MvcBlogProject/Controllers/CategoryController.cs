@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Business.Concrete;
+using Business.ValidationRules;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
+using FluentValidation.Results;
 
 namespace MvcBlogProject.Controllers
 {
@@ -37,8 +35,22 @@ namespace MvcBlogProject.Controllers
         [HttpPost]
         public ActionResult AdminCategoryAdd(Category category)
         {
-            _categoryManager.Add(category);
-            return RedirectToAction("AdminCategoryList");
+            CategoryValidator categoryValidator = new CategoryValidator();
+            ValidationResult result = categoryValidator.Validate(category);
+            if (result.IsValid)
+            {
+                _categoryManager.Add(category);
+                return RedirectToAction("AdminCategoryList");
+            }
+            else
+            {
+                foreach (var resultError in result.Errors)
+                {
+                    ModelState.AddModelError(resultError.PropertyName, resultError.ErrorMessage);
+                }
+            }
+            return View();
+
         }
         [HttpGet]
         public ActionResult Update(int id)
@@ -49,8 +61,21 @@ namespace MvcBlogProject.Controllers
         [HttpPost]
         public ActionResult Update(Category category)
         {
-            _categoryManager.Update(category);
-            return RedirectToAction("AdminCategoryList");
+            CategoryValidator categoryValidator = new CategoryValidator();
+            ValidationResult result = categoryValidator.Validate(category);
+            if (result.IsValid)
+            {
+                _categoryManager.Update(category);
+                return RedirectToAction("AdminCategoryList");
+            }
+            else
+            {
+                foreach (var resultError in result.Errors)
+                {
+                    ModelState.AddModelError(resultError.PropertyName, resultError.ErrorMessage);
+                }
+            }
+            return View();
         }
         public ActionResult CategoryStatusTrue(int id)
         {
