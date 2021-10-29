@@ -11,17 +11,14 @@ namespace MvcBlogProject.Controllers
     {
         // GET: Category
         private CategoryManager _categoryManager = new CategoryManager(new EfCategoryDal());
-        public ActionResult Index()
-        {
-            return View();
-        }
         [AllowAnonymous]
+        [HttpGet]
         public PartialViewResult BlogDetailsCategoryList()
         {
             var result = _categoryManager.GetAll();
             return PartialView(result);
         }
-
+        [HttpGet]
         public ActionResult AdminCategoryList()
         {
             var result = _categoryManager.GetAll();

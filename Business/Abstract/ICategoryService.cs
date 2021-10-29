@@ -7,6 +7,5 @@ namespace Business.Abstract
     {
         void CategoryStatusFalse(int id);
         void CategoryStatusTrue(int id);
-        Category FindCategory(int id);
     }
 }

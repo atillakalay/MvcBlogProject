@@ -59,11 +59,6 @@ namespace Business.Concrete
             _categoryDal.Update(category);
         }
 
-        public Category FindCategory(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public Category GetById(int id)
         {
             return _categoryDal.Get(x => x.CategoryId == id);

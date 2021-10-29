@@ -37,6 +37,11 @@ namespace DataAccess.Concrete.Repositories
             return _object.SingleOrDefault(filter);
         }
 
+        public T GetById(int id)
+        {
+            return _object.Find(id);
+        }
+
         public List<T> List()
         {
 

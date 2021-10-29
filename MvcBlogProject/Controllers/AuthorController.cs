@@ -4,8 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Business.Concrete;
+using Business.ValidationRules;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
+using FluentValidation.Results;
 
 namespace MvcBlogProject.Controllers
 {
@@ -42,8 +44,22 @@ namespace MvcBlogProject.Controllers
         [HttpPost]
         public ActionResult Add(Author author)
         {
-            _authorManager.Add(author);
-            return RedirectToAction("AuthorList");
+            AuthorValidator authorValidator = new AuthorValidator();
+            ValidationResult validationResult = authorValidator.Validate(author);
+            if (validationResult.IsValid)
+            {
+                _authorManager.Add(author);
+                return RedirectToAction("AuthorList");
+            }
+            else
+            {
+                foreach (var results in validationResult.Errors)
+                {
+                    ModelState.AddModelError(results.PropertyName,results.ErrorMessage);
+                }
+            }
+
+            return View();
         }
         [HttpGet]
         public ActionResult Update(int id)
@@ -54,8 +70,22 @@ namespace MvcBlogProject.Controllers
         [HttpPost]
         public ActionResult Update(Author author)
         {
-            _authorManager.Update(author);
-            return RedirectToAction("AuthorList");
+            AuthorValidator authorValidator = new AuthorValidator();
+            ValidationResult validationResult = authorValidator.Validate(author);
+            if (validationResult.IsValid)
+            {
+                _authorManager.Update(author);
+                return RedirectToAction("AuthorList");
+            }
+            else
+            {
+                foreach (var results in validationResult.Errors)
+                {
+                    ModelState.AddModelError(results.PropertyName, results.ErrorMessage);
+                }
+            }
+
+            return View();
         }
     }
 }
