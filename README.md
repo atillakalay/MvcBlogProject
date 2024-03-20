@@ -1,28 +1,47 @@
-# Mvc5 İle Blog Projesi
+# MVC PROJECT - Ekşi Sözlük Benzeri Bir Website
 
-Merhaba, bu proje genel olarak katmanlı mimariye uygun bir şekilde tasarlanmıştır . OOP olarak Entity Framework kullanılmaktadır .
+Bu proje, genel olarak Ekşi Sözlük'ten ilham alınarak oluşturulmuştur. Projemizde yazar, kullanıcı ve yönetici olmak üzere üç farklı kullanıcı türü bulunmaktadır. Tabii ki, bu kullanıcı türleri, editör gibi diğer rollerle genişletilebilir.
 
 ## Kullanılan Araçlar & Alt Yapılar & Teknolojiler
 
-- Migrations
-- Katmanlı Mimari
-- Entity Framework
-- MVC Pattern
+- **N Katmanlı Mimari:** Projemiz, N katmanlı mimari prensiplerine göre tasarlanmıştır, bu da kodun düzenli ve yönetilebilir olmasını sağlar.
+  
+- **Generic Repository Tasarım Deseni:** Veritabanı işlemlerini yönetmek için Generic Repository tasarım deseni kullanılmıştır, bu da kod tekrarını azaltır ve bakımı kolaylaştırır.
+  
+- **Nesne Yönelimli Programlama:** Projemiz, nesne yönelimli programlama prensiplerine dayalı olarak geliştirilmiştir, bu da kodun daha anlaşılır ve yeniden kullanılabilir olmasını sağlar.
+  
+- **Kalıtım (Polymorphism):** Kalıtım prensipleri, kodun daha esnek ve genişletilebilir olmasını sağlar.
+  
+- **Data Annotations ile Front-End Validasyonlar:** Kullanıcı girdilerinin doğrulanması için Data Annotations kullanılmıştır, bu da kullanıcıya daha iyi bir deneyim sunar ve güvenliği artırır.
+  
+- **Katmanlı Mimari Üzerinde Dependency Injection:** Katmanlı mimari üzerinde bağımlılık enjeksiyonu kullanılmıştır, bu da kodun daha test edilebilir olmasını sağlar.
+  
+- **DTO (Data Transfer Object):** Veri transferi için DTO'lar kullanılmıştır, bu da veri iletişimini optimize eder ve veri akışını yönetir.
+  
+- **LINQ:** Dil geişleme sorgu ile veritabanı işlemleri yapılmıştır, bu da veritabanı sorgularının daha kolay ve anlaşılır olmasını sağlar.
+  
+- **Resim & Dosya Yükleme İşlemleri:** Kullanıcıların resim ve dosyalarını yüklemelerini sağlayan işlevsellik eklenmiştir.
+  
+- **ASP.NET Core Identity:** Kullanıcı kimlik doğrulama ve yetkilendirme işlemleri için ASP.NET Core Identity kullanılmıştır.
+  
+- **Authentication & Authorization:** Projemizde kullanıcı kimlik doğrulama ve yetkilendirme işlemleri bulunmaktadır, bu da güvenliği artırır ve yetkilendirme işlemlerini kontrol altında tutar.
+  
+- **Bootstrap Tema Giydirme İşlemleri:** Arayüz tasarımında Bootstrap tema kullanılmıştır, bu da kullanıcı arayüzünün daha modern ve kullanıcı dostu olmasını sağlar.
 
-MvcBlogProject içerisinde bulununan MvcBlogProject katmanının içerisinde bulunun Web.config dosyasından connectionString içerisine kullanılacak veritabanı türünün ayarları ve bağlantı cümlesi yapılmalıdır.
+## Ekran Görüntüleri
 
-![Screen Shot 6 06 2021 at 13 06](https://user-images.githubusercontent.com/63123956/120920672-a04b9980-c6c8-11eb-8ab0-7421a3f3a188.png)
+![Ekran Görüntüsü 1](https://github.com/atillakalay/MvcProjectCamp/assets/63123956/3fc6538f-bc11-4abe-9294-29091b06256d)
 
-Projemizde 3 adet panel bulunmaktadır . Bu pannelerden birincisi Vitrin herkesin kullanımına açık olan kısmımız ikincisi ise yazar panelimiz üçüncüsü ise Admin panelimizdir .
+Ana sayfada ilk olarak projenin tanıtımı ve hakkımda kısmı bizi karşılıyor.
 
-Ana sayfada ilk olarak öne çıkan postlar bizi karşılıyor . Menüde gördüğümüz bazı kategorilere daha hızlı bir erişim sağlanması adına bu kategorilerilere giden linkler verdik . Gidilen bu sayfada ise filtreleme ile sadece o kategoriye ait postlar karşımıza çıkmaktadır .
+![Ekran Görüntüsü 2](https://github.com/atillakalay/MvcProjectCamp/assets/63123956/ffd575a2-ad5d-466f-8f9a-280201b5f637)
 
-![Screen Shot 6 06 2021 at 13 16](https://user-images.githubusercontent.com/63123956/120920834-7ba3f180-c6c9-11eb-8a7e-f54157e7ba80.png)
+## Projenin Genel Görünümüne Gelecek Olursak
 
-Biraz aşağıya indiğimizde PagedList kullanarak sayfalama sistemi kullanarak oluşturduğumuz Postlarımızı görüyoruz . Postlarımıza tıkladığımızda detaylı inceleme fırsatı bulduğumuz bir sayfaya yönlendiriliyoruz .
+![Ekran Görüntüsü 3](https://github.com/atillakalay/MvcProjectCamp/assets/63123956/86867ce9-813d-4de0-8898-7ceb5a5fc2eb)
 
-![Screen Shot 6 06 2021 at 12 50 - 2](https://user-images.githubusercontent.com/63123956/120920959-0edd2700-c6ca-11eb-9ff3-33a43b372aeb.png)
+![Ekran Görüntüsü 4](https://github.com/atillakalay/MvcProjectCamp/assets/63123956/54118443-2345-4a8b-a034-3164b379264b)
 
-Hemen aşağı kısmında da mail bültenimiz ve footer'ımız bulunmaktadır .
+![Ekran Görüntüsü 5](https://github.com/atillakalay/MvcProjectCamp/assets/63123956/5e6ad967-c31f-40ce-8d57-284cd5861d85)
 
-![Screen Shot 6 06 2021 at 13 25](https://user-images.githubusercontent.com/63123956/120921077-a2aef300-c6ca-11eb-8f03-81ce57041c9b.png)
+MvcProjectCamp projemiz, Code First yaklaşımını benimsemektedir ve Murat Yücedağ hocamızın talepleri doğrultusunda güncellenmiştir.
